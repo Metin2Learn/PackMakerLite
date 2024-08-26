@@ -31,3 +31,36 @@ tl;dr if you try to pack root, it will search the settings in the following orde
  'PackMakerLite.json'
  'C:\Users\Marty\root.json' (%userprofile%/<packname>.json)
  'C:\Users\Marty\PackMakerLite.json' (%userprofile%/PackMakerLite.json)
+
+
+以管理员身份运行 install.bat 或将以下文件复制到“c:\windows\system32\”中：
+PackMakerLite.exe
+PackMakerLite_p.bat
+PackMakerLite_u.bat
+
+要获取菜单集成，请运行：
+PML_Pack.add.reg
+PML_Unpack.add.reg
+
+-----------------------
+如果您想要自定义该工具，
+直接在相关工作环境中复制并编辑 PackMakerLite.json
+（其中存在 .eix 文件）
+（PackMakerLite.json.sample 包含任何可自定义字段的示例）
+
+如果您只想自定义特定包（例如 ETC），
+只需将其重命名为 <packname>.json（例如 etc.json）
+
+自 v2.3 起，如果缺少本地文件，您也可以从 %userprofile% 全局加载 json 文件。
+(%userprofile% = C:\Users\<username>)
+
+自 v2.6 起，打包程序使用 --load_cs <packname> 加载“cshybridcrypt_<packname>.dat”以解压类型 4-5。
+即，必须在 -u/--unpack 之前使用，而不是之后
+
+自 v2.7 起，可以使用 --typeforce 省略 --load_cs 和 --create_cs
+
+tl;dr 如果您尝试打包 root，它将按以下顺序搜索设置：
+'root.json' (<packname>.json)
+'PackMakerLite.json'
+'C:\Users\Marty\root.json' (%userprofile%/<packname>.json)
+'C:\Users\Marty\PackMakerLite.json' (%userprofile%/PackMakerLite.json)
