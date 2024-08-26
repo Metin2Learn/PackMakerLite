@@ -2,6 +2,8 @@
 
 https://metin2.dev/topic/20776-eterpack-archiver-packmakerlite/
 
+https://metin2.dev/topic/2482-how-to-unpack-official-patches/#comment-16854
+
 PackMakerLite (PML) 支持类型 0-1-2-3-4-5-6。
 
 总而言之，metin2 类型的处理如下：
