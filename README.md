@@ -6,21 +6,34 @@ PackMakerLite (PML) 支持类型 0-1-2-3-4-5-6。
 
 总而言之，metin2 类型的处理如下：
 
-类型 0-仅存储（无加密/压缩；可以从 .epk 中完全读取）
-类型 1 - 压缩 - lzo（文件）
-类型 2 - 压缩并加密 - xtea(lzo(file))
-类型 3 - 使用 Panama 加密 - 您必须在 panama/ 文件夹中保存一个服务器端的 .iv 密钥。（内容仅在身份验证阶段后可读）官方仅将其用于 patch2。
-类型 4 - 使用混合密码加密（cshybridcrypt） - 您必须在包/文件夹中保存一个 .dat 密钥服务器端。（内容仅在身份验证阶段后可读）几乎所有的 metin2_patch 文件。
-类型 5 - 与类型 4 类似，但还提供了服务器端地图/<map_name>。（只有以玩家身份访问 <map_name> 地图后才可读取内容）官方仅将其用于地下墓穴数据。
-类型 6 - 压缩和加密 - xtea(snappy(file))
+- 类型 0-仅存储（无加密/压缩；可以从 .epk 中完全读取）
+- 类型 1-压缩-lzo（文件）
+- 类型 2-压缩并加密-xtea(lzo(file))
+- 类型 3-使用 Panama 加密-您必须在 panama/ 文件夹中保存一个服务器端的 .iv 密钥。（内容仅在身份验证阶段后可读）官方仅将其用于 patch2。
+- 类型 4-使用混合密码加密（cshybridcrypt）-您必须在服务端 package/ 文件夹中保存一个 .dat 密钥服务器端。（内容仅在身份验证阶段后可读）几乎所有的 metin2_patch 文件。
+- 类型 5-与类型 4 类似，但还提供了服务器端地图/<map_name>。（只有以玩家身份访问 <map_name> 地图后才可读取内容）官方仅将其用于地下墓穴数据。
+- 类型 6-压缩和加密-xtea(snappy(file))
 
 ### 安装
 
 以管理员运行 “install.bat”
 
+其设置（xtea 键、扩展、要使用的包类型）可以在 PackMakerLite.json 中更改：
+
+### 配置文件放置
+
+默认配置文件放在 .eix 文件所在目录
+假如打包 root，它将按以下顺序搜索设置：
+- 'root.json' (<packname>.json)
+- 'PackMakerLite.json'
+- 'C:\Users\Marty\root.json' (%userprofile%/<packname>.json)
+- 'C:\Users\Marty\PackMakerLite.json' (%userprofile%/PackMakerLite.json)
+
 ### 解读
 PackMakerLite_p.bat 打包命令
-PackMakerLite_u.bat unpack命令
+PackMakerLite_u.bat 解包命令
+PackMakerLite_PackAllDirectories.bat  打包所有
+PackMakerLite_UnpackAll.bat           解包所有
 
 ```
 {
@@ -94,3 +107,12 @@ PackMakerLite_u.bat unpack命令
 "eter_magic_mcsp":"MCSP"
 }
 ```
+
+
+### 作者
+
+Thanks also to:
+blackdragonx61 / Mali-type4-5 extract code / type 6 compress code
+metin2team-type6 extract code
+
+By martysama0134
