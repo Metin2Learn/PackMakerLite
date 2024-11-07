@@ -1,6 +1,7 @@
 ### TYPE 4 with .json
 ## Pack
 PackMakerLite.exe --create_cs four --pack four
+PackMakerLite.exe --create_cs root --pack root
 ## Unpack
 PackMakerLite.exe --load_cs four --unpack four
 

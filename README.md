@@ -3,6 +3,7 @@
 https://metin2.dev/topic/20776-eterpack-archiver-packmakerlite/
 
 https://metin2.dev/topic/2482-how-to-unpack-official-patches/#comment-16854
+https://metin2.dev/docs/pages/file-formats/eterpack-r9/
 
 PackMakerLite (PML) 支持类型 0-1-2-3-4-5-6。
 
@@ -15,6 +16,17 @@ PackMakerLite (PML) 支持类型 0-1-2-3-4-5-6。
 - 类型 4-使用混合密码加密（cshybridcrypt）-您必须在服务端 package/ 文件夹中保存一个 .dat 密钥服务器端。（内容仅在身份验证阶段后可读）几乎所有的 metin2_patch 文件。
 - 类型 5-与类型 4 类似，但还提供了服务器端地图/<map_name>。（只有以玩家身份访问 <map_name> 地图后才可读取内容）官方仅将其用于地下墓穴数据。
 - 类型 6-压缩和加密-xtea(snappy(file))
+
+
+已知的 EterPack 类型
+型号	描述
+类型 0   该文件是 RAW，没有压缩或加密。
+类型 1	该文件使用 LZO 压缩，但不使用 XTEA。
+类型 2	该文件使用 LZO 压缩，然后使用 EterPack 内容密钥通过 XTEA 加密。（换句话说，就是 MCOZ CryptedObject）
+类型 3	该文件使用巴拿马 加密
+类型 4	混合加密
+类型 5	带有额外数据的HybridCrypt
+类型 6	该文件使用 Snappy 压缩，然后使用 EterPack 内容密钥通过 XTEA 加密。（换句话说，就是 MCSP CryptedObject）
 
 ### 安装
 
